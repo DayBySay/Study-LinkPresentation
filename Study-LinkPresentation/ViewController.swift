@@ -7,14 +7,30 @@
 //
 
 import UIKit
+import LinkPresentation
 
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        
+        let provider = LPMetadataProvider()
+        let url = URL(string: "https://www.apple.com/ipad/")!
+        
+        provider.startFetchingMetadata(for: url) { [weak self] (metadata, error) in
+            if let error = error {
+                print(error)
+                return
+            }
+            guard let metadata = metadata else { return }
+            let lpview = LPLinkView(metadata: metadata)
+            lpview.frame = CGRect(x: 0100, y: 100, width: 300, height: 200)
+            DispatchQueue.main.async {
+                self?.view.addSubview(lpview)
+            }
+        }
+        
     }
-
-
 }
 
