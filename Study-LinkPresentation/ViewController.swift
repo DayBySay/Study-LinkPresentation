@@ -23,10 +23,10 @@ class ViewController: UIViewController {
                 print(error)
                 return
             }
-            guard let metadata = metadata else { return }
-            let lpview = LPLinkView(metadata: metadata)
-            lpview.frame = CGRect(x: 0100, y: 100, width: 300, height: 200)
             DispatchQueue.main.async {
+                guard let metadata = metadata else { return }
+                let lpview = LPLinkView(metadata: metadata)
+                lpview.frame = CGRect(x: 100, y: 100, width: 300, height: 200)
                 self?.view.addSubview(lpview)
             }
         }
