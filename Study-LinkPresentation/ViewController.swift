@@ -15,9 +15,18 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
-        let provider = LPMetadataProvider()
-        let url = URL(string: "https://www.apple.com/ipad/")!
+        let ogpUrl = URL(string: "https://www.apple.com/ipad/")!
+        let ogpFrame = CGRect(x: 100, y: 100, width: 300, height: 200)
+        addOGPView(url: ogpUrl, frame: ogpFrame)
         
+        let twUrl = URL(string: "https://twitter.com/tion_low")!
+        let twFrame = CGRect(x: 100, y: 300, width: 300, height: 200)
+        addOGPView(url: twUrl, frame: twFrame)
+    }
+    
+    private func addOGPView(url: URL, frame: CGRect) {
+        let provider = LPMetadataProvider()
+
         provider.startFetchingMetadata(for: url) { [weak self] (metadata, error) in
             if let error = error {
                 print(error)
@@ -26,11 +35,10 @@ class ViewController: UIViewController {
             DispatchQueue.main.async {
                 guard let metadata = metadata else { return }
                 let lpview = LPLinkView(metadata: metadata)
-                lpview.frame = CGRect(x: 100, y: 100, width: 300, height: 200)
+                lpview.frame = frame
                 self?.view.addSubview(lpview)
             }
         }
-        
     }
 }
 
