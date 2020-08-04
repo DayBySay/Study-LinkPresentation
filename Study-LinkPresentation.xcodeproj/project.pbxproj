@@ -13,6 +13,9 @@
 		1905361A24D2DC0300D8F93A /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1905361824D2DC0300D8F93A /* Main.storyboard */; };
 		1905361C24D2DC0500D8F93A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1905361B24D2DC0500D8F93A /* Assets.xcassets */; };
 		1905361F24D2DC0500D8F93A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 1905361D24D2DC0500D8F93A /* LaunchScreen.storyboard */; };
+		190EF33A24D903C7000F4E64 /* OGPRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EF33924D903C7000F4E64 /* OGPRepository.swift */; };
+		190EF33C24D903F7000F4E64 /* CustomOGPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 190EF33B24D903F7000F4E64 /* CustomOGPView.swift */; };
+		190EF33E24D90459000F4E64 /* CustomOGPView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 190EF33D24D90459000F4E64 /* CustomOGPView.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +27,9 @@
 		1905361B24D2DC0500D8F93A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1905361E24D2DC0500D8F93A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		1905362024D2DC0500D8F93A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		190EF33924D903C7000F4E64 /* OGPRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OGPRepository.swift; sourceTree = "<group>"; };
+		190EF33B24D903F7000F4E64 /* CustomOGPView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomOGPView.swift; sourceTree = "<group>"; };
+		190EF33D24D90459000F4E64 /* CustomOGPView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CustomOGPView.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +65,9 @@
 				1905361224D2DC0300D8F93A /* AppDelegate.swift */,
 				1905361424D2DC0300D8F93A /* SceneDelegate.swift */,
 				1905361624D2DC0300D8F93A /* ViewController.swift */,
+				190EF33B24D903F7000F4E64 /* CustomOGPView.swift */,
+				190EF33D24D90459000F4E64 /* CustomOGPView.xib */,
+				190EF33924D903C7000F4E64 /* OGPRepository.swift */,
 				1905361824D2DC0300D8F93A /* Main.storyboard */,
 				1905361B24D2DC0500D8F93A /* Assets.xcassets */,
 				1905361D24D2DC0500D8F93A /* LaunchScreen.storyboard */,
@@ -127,6 +136,7 @@
 			files = (
 				1905361F24D2DC0500D8F93A /* LaunchScreen.storyboard in Resources */,
 				1905361C24D2DC0500D8F93A /* Assets.xcassets in Resources */,
+				190EF33E24D90459000F4E64 /* CustomOGPView.xib in Resources */,
 				1905361A24D2DC0300D8F93A /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +148,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				190EF33A24D903C7000F4E64 /* OGPRepository.swift in Sources */,
+				190EF33C24D903F7000F4E64 /* CustomOGPView.swift in Sources */,
 				1905361724D2DC0300D8F93A /* ViewController.swift in Sources */,
 				1905361324D2DC0300D8F93A /* AppDelegate.swift in Sources */,
 				1905361524D2DC0300D8F93A /* SceneDelegate.swift in Sources */,
