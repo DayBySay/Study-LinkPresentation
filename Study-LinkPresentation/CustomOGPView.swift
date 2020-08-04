@@ -18,10 +18,22 @@ class CustomOGPView: UIView {
         title.text = metadata.title
         url.text = metadata.url?.absoluteString
         
-        if metadata.imageProvider?.canLoadObject(ofClass: URL.self) ?? false {
-            let url = metadata.imageProvider?.loadObject(ofClass: URL.self, completionHandler: { (url, error) in
-                print(url)
-            })
+        if let provider = metadata.imageProvider {
+            if provider.canLoadObject(ofClass: UIImage.self) {
+                provider.loadObject(ofClass: UIImage.self) {(image, error) in
+                    if let image = image as? UIImage {
+                        DispatchQueue.main.async { [weak self] in
+                            self?.imageView.image = image
+                        }
+                    }
+                }
+            }
         }
+    }
+    
+    override func draw(_ rect: CGRect) {
+        self.layer.borderWidth = 1
+        self.layer.borderColor = UIColor.black.cgColor
+        
     }
 }
