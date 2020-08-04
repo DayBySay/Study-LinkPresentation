@@ -10,6 +10,7 @@ import UIKit
 import LinkPresentation
 
 class ViewController: UIViewController {
+    private let repository = OGPRepository()
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,15 +26,8 @@ class ViewController: UIViewController {
     }
     
     private func addOGPView(url: URL, frame: CGRect) {
-        let provider = LPMetadataProvider()
-
-        provider.startFetchingMetadata(for: url) { [weak self] (metadata, error) in
-            if let error = error {
-                print(error)
-                return
-            }
+        repository.ogpMetadata(url: url) { [weak self] (metadata) in
             DispatchQueue.main.async {
-                guard let metadata = metadata else { return }
                 let lpview = LPLinkView(metadata: metadata)
                 lpview.frame = frame
                 self?.view.addSubview(lpview)
@@ -80,7 +74,7 @@ class OGPRepository {
             guard let metadata = metadata else { return }
             completion?(metadata)
             
-            guard let self = self else { return}
+            guard let self = self else { return }
             do {
                 let data = try NSKeyedArchiver.archivedData(withRootObject: metadata, requiringSecureCoding: true)
                 var metadatas: [String: Data] = self.store.dictionary(forKey: self.key) as? [String: Data] ?? [:]
